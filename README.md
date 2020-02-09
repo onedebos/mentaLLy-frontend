@@ -1,68 +1,119 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Name
 
-## Available Scripts
+> This is a tablet(intended to be viewed on tablets) web app that allows people schedule
+> appointments with mental health service providers in Nigeria.
 
-In the project directory, you can run:
+![screenshot](./app_screenshot.png)
 
-### `yarn start`
+The app includes a Rails API that renders JSON to be consumed
+by React Views.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Built With
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Rails
+- React
+- Bootstrap
+- Node
+- Axios
+- Redux
+- FontAwesomeIcons
+- Circular std font
 
-### `yarn test`
+## Live Demo
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Live Demo Link](https://mentallly.herokuapp.com)
 
-### `yarn build`
+## Getting Started
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**To get started, follow the instructions below**
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+To get a local copy up and running follow these simple example steps.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `yarn eject`
+- Make sure to have Rails 6.0 and Ruby 2.5.1
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Install
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Install the Ruby Gems required by rails
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+bundle install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Install the packages required by React
 
-## Learn More
+```
+npm install or yarn install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To use the app, start the rails server using
 
-### Code Splitting
+```
+rails s
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+In a seperate terminal window, start Webpack using
 
-### Analyzing the Bundle Size
+```
+npm start
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+navigate to
 
-### Making a Progressive Web App
+```
+http://localhost:3000
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+in your browser. You should see the app running!
 
-### Advanced Configuration
+You can sign up and sign in from here.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+To access the Admin account/panel, use the following information.
+
+- email: admin@mentallybook.com
+- password: password
+
+- Admin can create a new provider.
+
+### Run tests
+
+Run model tests
+
+```
+bundle exec rspec
+```
 
 ### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Authors
 
-### `yarn build` fails to minify
+👤 **Adebola**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+👤 **Adebola**
+
+- Github: [@githubhandle](https://github.com/onedebos)
+- Twitter: [@twitterhandle](https://twitter.com/debosthefirst)
+- Linkedin: [linkedin](https://www.linkedin.com/in/adebola-niran/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Thanks to [Murat Kohmaz](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) for his design.
+- Thanks to [Jessica Felicio](https://unsplash.com/photos/QS9ZX5UnS14) for images
+- logos used from [hatchful](https://www.bookmarks.design/media/image/hatchful.jpg)
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
