@@ -3,6 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import TimePicker from 'react-time-picker';
 import statesInNigeria from './statesInNigeria';
 import '../styles/NewAppointment.css';
 import API_URL from '../helpers/apiUrl';
@@ -14,7 +15,7 @@ class NewAppointment extends React.Component {
     this.state = {
       city: '',
       date: null,
-      time: null,
+      time: '',
       user_id: userStatus.id,
       provider: { name: '' },
       errors: '',
@@ -99,7 +100,8 @@ class NewAppointment extends React.Component {
   }
 
   render() {
-    const { provider, errors } = this.state;
+    const { provider, errors, time } = this.state;
+    const onChangeTime = time => this.setState({ time });
     const displayStatesInNigeria = () =>
       statesInNigeria.map(state => <option key={state}>{state}</option>);
     const displayErrors = () => <div className="login-errors">{errors}</div>;
@@ -112,13 +114,17 @@ class NewAppointment extends React.Component {
             <h1 className="make-appointment-title">Make an appointment with {provider.name}</h1>
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
-                <label htmlFor="city">City:</label>
+                <div className="res-state">
+                  <label htmlFor="city">Your resident state:</label>
+                </div>
                 <select name="city" id="city" required onChange={this.onChange}>
                   {displayStatesInNigeria()}
                 </select>
               </div>
               <div className="form-group">
-                <label htmlFor="Date">Date:</label>
+                <div className="res-state">
+                  <label htmlFor="Date">Date:</label>
+                </div>
                 <input
                   type="date"
                   name="date"
@@ -129,9 +135,9 @@ class NewAppointment extends React.Component {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="email">Time:</label>
-                <input type="time" name="time" id="time" required onChange={this.onChange} />
-
+                <div>
+                  <TimePicker onChange={onChangeTime} value={time} />
+                </div>
                 <small id="logoHelp">24hr clock</small>
               </div>
               <div className="btn-div">

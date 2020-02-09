@@ -28,9 +28,15 @@
   line-height: 1.2;
 }
 
+.res-state {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
 .form-group {
   margin-bottom: 1em;
   font-size: 1.3em;
+  text-align: center;
 }
 
 #city,
@@ -51,7 +57,7 @@
 #logoHelp {
   font-size: 0.8em;
   color: grey;
-  margin-left: 10em;
+  text-align: center;
 }
 
 .make-appointment-btn {
