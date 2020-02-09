@@ -1,6 +1,7 @@
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
+import API_URL from '../helpers/apiUrl';
 import statesInNigeria from '../appointments/statesInNigeria';
 import DisplayAllTitles from '../auth/DisplayAllTtitles';
 import Field from '../auth/Field';
@@ -27,7 +28,7 @@ class NewProvider extends React.Component {
 
   onSubmit(event) {
     event.preventDefault();
-    const url = 'http://localhost:3001/api/v1/providers/';
+    const url = `${API_URL}/api/v1/providers/`;
     const { name, email, state, logo, description } = this.state;
 
     if (name.length === 0 || email.length === 0 || state.length === 0) return;
@@ -42,11 +43,9 @@ class NewProvider extends React.Component {
 
     const { history } = this.props;
 
-    const token = document.querySelector('meta[name="csrf-token"]').content;
     fetch(url, {
       method: 'POST',
       headers: {
-        'X-CSRF-Token': token,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
@@ -62,6 +61,7 @@ class NewProvider extends React.Component {
   }
 
   render() {
+    const { name, email, state, logo, description } = this.state;
     const displayStatesInNigeria = () =>
       statesInNigeria.map(state => <option key={state}>{state}</option>);
     return (
@@ -73,7 +73,14 @@ class NewProvider extends React.Component {
               sub={`You're signed in as an admin.`}
             />
             <form className="new-provider-form" onSubmit={this.onSubmit}>
-              <Field name="name" label="Name: " onChange={this.onChange} type="text" id="name" />
+              <Field
+                name="name"
+                label="Name: "
+                onChange={this.onChange}
+                type="text"
+                id="name"
+                value={name}
+              />
 
               <Field
                 name="email"
@@ -81,6 +88,7 @@ class NewProvider extends React.Component {
                 onChange={this.onChange}
                 type="email"
                 id="email"
+                value={email}
               />
               <div className="state-group">
                 <label className="state-label" htmlFor="email">
@@ -93,12 +101,20 @@ class NewProvider extends React.Component {
                   required
                   onChange={this.onChange}
                   placeholder="Lagos"
+                  value={state}
                 >
                   {displayStatesInNigeria()}
                 </select>
               </div>
 
-              <Field name="logo" label="Logo URL: " onChange={this.onChange} type="url" id="logo" />
+              <Field
+                name="logo"
+                label="Logo URL: "
+                onChange={this.onChange}
+                type="url"
+                id="logo"
+                value={logo}
+              />
 
               <div className="description-label">
                 <label htmlFor="description">Description</label>
@@ -109,6 +125,7 @@ class NewProvider extends React.Component {
                     name="description"
                     rows="3"
                     onChange={this.onChange}
+                    value={description}
                   />
                 </div>
               </div>

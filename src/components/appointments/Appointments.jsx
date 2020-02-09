@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import API_URL from '../helpers/apiUrl';
 
 class Appointments extends React.Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class Appointments extends React.Component {
       history,
     } = this.props;
 
-    const url = `http://localhost:3001/api/v1/providers/${id}/appointments`;
+    const url = `${API_URL}/api/v1/providers/${id}/appointments`;
 
     fetch(url)
       .then(response => {
@@ -39,13 +40,11 @@ class Appointments extends React.Component {
       },
       history,
     } = this.props;
-    const url = `http://localhost:3001/api/v1/providers/${id}`;
-    const token = document.querySelector('meta[name="csrf-token"]').content;
+    const url = `${API_URL}/api/v1/providers/${id}`;
 
     fetch(url, {
       method: 'DELETE',
       headers: {
-        'X-CSRF-Token': token,
         'Content-Type': 'application/json',
       },
     })

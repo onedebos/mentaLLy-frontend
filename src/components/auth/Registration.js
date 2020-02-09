@@ -5,6 +5,7 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import Field from './Field';
 import Submit from './Submit';
+import API_URL from '../helpers/apiUrl';
 import '../styles/Registration.css';
 
 export class Registration extends Component {
@@ -37,7 +38,7 @@ export class Registration extends Component {
     e.preventDefault();
     axios
       .post(
-        'http://localhost:3001/api/v1/registrations',
+        `${API_URL}/api/v1/registrations`,
         {
           name,
           email,

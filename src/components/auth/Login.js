@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import '../styles/Login.css';
 import PropTypes from 'prop-types';
+import API_URL from '../helpers/apiUrl';
 import Field from './Field';
 import Submit from './Submit';
 
@@ -35,7 +36,7 @@ export class Login extends Component {
     e.preventDefault();
     axios
       .post(
-        'http://localhost:3001/api/v1/sessions',
+        `${API_URL}/api/v1/sessions`,
         {
           email,
           password,

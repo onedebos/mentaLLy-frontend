@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
+import API_URL from './helpers/apiUrl';
 import Menu from './Menu';
 import Home from './Home';
 import Providers from './provider/Providers';
@@ -35,7 +36,7 @@ export default class App extends Component {
   checkLoginStatus() {
     const { loggedInStatus } = this.state;
     axios
-      .get('http://localhost:3001/api/v1/logged_in', { withCredentials: true })
+      .get(`${API_URL}/api/v1/logged_in`, { withCredentials: true })
       .then(response => {
         if (response.data.logged_in && loggedInStatus === 'NOT_LOGGED_IN') {
           this.setState({

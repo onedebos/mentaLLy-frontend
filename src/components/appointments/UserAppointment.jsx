@@ -3,6 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import API_URL from '../helpers/apiUrl';
 import DisplayAllTitles from '../auth/DisplayAllTtitles';
 import AppointmentCard from './AppointmentCard';
 
@@ -19,7 +20,7 @@ class UserAppointment extends React.Component {
 
   componentDidMount() {
     const { history } = this.props;
-    const url = 'http://localhost:3001/api/v1/appointments';
+    const url = `${API_URL}/api/v1/appointments`;
     fetch(url)
       .then(response => {
         if (response.ok) {
@@ -30,7 +31,7 @@ class UserAppointment extends React.Component {
       .then(response => this.setState({ appointments: response }))
       .catch(() => history.push('/'));
 
-    fetch('http://localhost:3001/api/v1/providers')
+    fetch(`${API_URL}/api/v1/providers`)
       .then(response => {
         if (response.ok) {
           return response.json();

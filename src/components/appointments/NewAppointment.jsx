@@ -5,15 +5,17 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import statesInNigeria from './statesInNigeria';
 import '../styles/NewAppointment.css';
+import API_URL from '../helpers/apiUrl';
 
 class NewAppointment extends React.Component {
   constructor(props) {
     super(props);
+    const { userStatus } = this.props;
     this.state = {
       city: '',
       date: null,
       time: null,
-      user_id: 1,
+      user_id: userStatus.id,
       provider: { name: '' },
       errors: '',
     };
@@ -29,7 +31,8 @@ class NewAppointment extends React.Component {
       },
       history,
     } = this.props;
-    const url = `http://localhost:3001/api/v1/providers/${id}`;
+
+    const url = `${API_URL}/api/v1/providers/${id}`;
 
     fetch(url)
       .then(response => {
@@ -39,7 +42,16 @@ class NewAppointment extends React.Component {
         throw new Error('Network response was not ok.');
       })
       .then(response => this.setState({ provider: response }))
-      .catch(() => history.push('/provider'));
+      .catch(() => history.push('/providers'));
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.userStatus.id !== state.user_id) {
+      return {
+        user_id: props.userStatus.id,
+      };
+    }
+    return null;
   }
 
   onChange(event) {
@@ -57,25 +69,20 @@ class NewAppointment extends React.Component {
     } = this.props;
 
     event.preventDefault();
-    const url = `http://localhost:3001/api/v1/providers/${id}/appointments`;
-    const { city, date, time, user_id } = this.state;
-    const { userStatus } = this.props;
-    this.setState({ [user_id]: userStatus.id });
+    const url = `${API_URL}/api/v1/providers/${id}/appointments`;
 
-    //  Add condition for time in the past
+    const { city, date, time, user_id } = this.state;
 
     const body = {
+      id,
       city,
       date,
       time,
       user_id,
     };
-
-    const token = document.querySelector('meta[name="csrf-token"]').content;
     fetch(url, {
       method: 'POST',
       headers: {
-        'X-CSRF-Token': token,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
@@ -87,7 +94,7 @@ class NewAppointment extends React.Component {
         }
         throw new Error('Network response was not ok.');
       })
-      .then(this.setState({ errors: 'City cannot be blank ' }))
+      .then(this.setState({ errors: 'City cannot be empty. ' }))
       .catch(error => error.message);
   }
 
@@ -106,7 +113,7 @@ class NewAppointment extends React.Component {
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
                 <label htmlFor="city">City:</label>
-                <select name="city" id="city" required onChange={this.onChange} placeholder="Lagos">
+                <select name="city" id="city" required onChange={this.onChange}>
                   {displayStatesInNigeria()}
                 </select>
               </div>
@@ -123,14 +130,8 @@ class NewAppointment extends React.Component {
               </div>
               <div className="form-group">
                 <label htmlFor="email">Time:</label>
-                <input
-                  type="time"
-                  name="time"
-                  id="time"
-                  required
-                  placeholder="12 : 35"
-                  onChange={this.onChange}
-                />
+                <input type="time" name="time" id="time" required onChange={this.onChange} />
+
                 <small id="logoHelp">24hr clock</small>
               </div>
               <div className="btn-div">

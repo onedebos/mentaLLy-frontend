@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import API_URL from './helpers/apiUrl';
 import './styles/Menu.css';
 
 export default class Menu extends Component {
@@ -15,7 +16,7 @@ export default class Menu extends Component {
   handleLogOutClick() {
     const { handleLogout } = this.props;
     axios
-      .delete('http://localhost:3001/api/v1/logout', {
+      .delete(`${API_URL}/api/v1/logout`, {
         withCredentials: true,
       })
       .then(() => {

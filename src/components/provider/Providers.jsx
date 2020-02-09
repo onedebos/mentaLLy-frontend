@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import '../styles/Providers.css';
 import PropTypes from 'prop-types';
 import { uuid } from 'uuidv4';
+import API_URL from '../helpers/apiUrl';
 import ProvidersComponent from './ProvidersComponent';
 import DisplayAllTitles from '../auth/DisplayAllTtitles';
 
@@ -17,7 +18,7 @@ class Providers extends React.Component {
   }
 
   componentDidMount() {
-    const url = 'http://localhost:3001/api/v1/providers/';
+    const url = `${API_URL}/api/v1/providers/`;
     const { history } = this.props;
     fetch(url)
       .then(response => {
