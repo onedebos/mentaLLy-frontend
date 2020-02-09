@@ -15,7 +15,7 @@ export default class Menu extends Component {
   handleLogOutClick() {
     const { handleLogout } = this.props;
     axios
-      .delete('/api/v1/logout', {
+      .delete('http://localhost:3001/api/v1/logout', {
         withCredentials: true,
       })
       .then(() => {

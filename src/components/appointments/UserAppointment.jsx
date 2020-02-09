@@ -19,7 +19,7 @@ class UserAppointment extends React.Component {
 
   componentDidMount() {
     const { history } = this.props;
-    const url = '/api/v1/appointments';
+    const url = 'http://localhost:3001/api/v1/appointments';
     fetch(url)
       .then(response => {
         if (response.ok) {
@@ -30,7 +30,7 @@ class UserAppointment extends React.Component {
       .then(response => this.setState({ appointments: response }))
       .catch(() => history.push('/'));
 
-    fetch('/api/v1/providers')
+    fetch('http://localhost:3001/api/v1/providers')
       .then(response => {
         if (response.ok) {
           return response.json();

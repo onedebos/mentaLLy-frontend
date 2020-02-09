@@ -17,7 +17,7 @@ class Providers extends React.Component {
   }
 
   componentDidMount() {
-    const url = '/api/v1/providers/';
+    const url = 'http://localhost:3001/api/v1/providers/';
     const { history } = this.props;
     fetch(url)
       .then(response => {

@@ -23,7 +23,7 @@ class Provider extends React.Component {
       history,
     } = this.props;
 
-    const url = `/api/v1/providers/${id}`;
+    const url = `http://localhost:3001/api/v1/providers/${id}`;
 
     fetch(url)
       .then(response => {
@@ -43,7 +43,7 @@ class Provider extends React.Component {
         history,
       },
     } = this.props;
-    const url = `/api/v1/providers/${id}`;
+    const url = `http://localhost:3001/api/v1/providers/${id}`;
     const token = document.querySelector('meta[name="csrf-token"]').content;
 
     fetch(url, {

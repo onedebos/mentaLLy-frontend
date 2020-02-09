@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import 'circular-std';
 import App from './components/App';
+import './components/styles/reset.css';
 
 document.addEventListener('DOMContentLoaded', () => {
   render(

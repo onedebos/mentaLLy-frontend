@@ -29,7 +29,7 @@ class NewAppointment extends React.Component {
       },
       history,
     } = this.props;
-    const url = `/api/v1/providers/${id}`;
+    const url = `http://localhost:3001/api/v1/providers/${id}`;
 
     fetch(url)
       .then(response => {
@@ -57,7 +57,7 @@ class NewAppointment extends React.Component {
     } = this.props;
 
     event.preventDefault();
-    const url = `/api/v1/providers/${id}/appointments`;
+    const url = `http://localhost:3001/api/v1/providers/${id}/appointments`;
     const { city, date, time, user_id } = this.state;
     const { userStatus } = this.props;
     this.setState({ [user_id]: userStatus.id });

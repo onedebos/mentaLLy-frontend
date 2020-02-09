@@ -26,7 +26,7 @@ class EditProvider extends React.Component {
       },
     } = this.props;
 
-    const url = `/api/v1/providers/${id}`;
+    const url = `http://localhost:3001/api/v1/providers/${id}`;
     const { history } = this.props;
     fetch(url)
       .then(response => {
@@ -51,7 +51,7 @@ class EditProvider extends React.Component {
       history,
     } = this.props;
     event.preventDefault();
-    const url = `/api/v1/providers/${id}`;
+    const url = `http://localhost:3001/api/v1/providers/${id}`;
     const { name, email, state, logo, description } = this.state;
 
     const body = {

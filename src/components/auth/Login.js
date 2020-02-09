@@ -35,7 +35,7 @@ export class Login extends Component {
     e.preventDefault();
     axios
       .post(
-        '/api/v1/sessions',
+        'http://localhost:3001/api/v1/sessions',
         {
           email,
           password,

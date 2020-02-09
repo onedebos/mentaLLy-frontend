@@ -27,7 +27,7 @@ class NewProvider extends React.Component {
 
   onSubmit(event) {
     event.preventDefault();
-    const url = '/api/v1/providers/';
+    const url = 'http://localhost:3001/api/v1/providers/';
     const { name, email, state, logo, description } = this.state;
 
     if (name.length === 0 || email.length === 0 || state.length === 0) return;
