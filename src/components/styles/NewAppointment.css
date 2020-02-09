@@ -1,0 +1,71 @@
+.make-appointment-bg {
+  background-color: #f6be5d;
+}
+
+.make-appointment-container {
+  display: flex;
+  justify-content: center;
+}
+
+.make-appointment-wrapper {
+  background-color: white;
+  position: absolute;
+  margin: 3em auto;
+  padding: 1rem 3rem;
+  box-shadow: 3px 3px 5px 6px hsl(44, 86%, 36%);
+  border-radius: 1%;
+  width: 400px;
+  height: 520px;
+  font-family: CircularStd;
+}
+
+.make-appointment-title {
+  font-size: 1.5em;
+  font-weight: 600;
+  padding-bottom: 1em;
+  margin-top: 1.5em;
+  color: #493004;
+  line-height: 1.2;
+}
+
+.form-group {
+  margin-bottom: 1em;
+  font-size: 1.3em;
+}
+
+#city,
+#date,
+#time {
+  margin-left: 0.5em;
+  border: 0;
+  padding: 1em;
+  width: 250px;
+  background-color: lightgrey;
+  font-family: CircularStd;
+}
+
+#city {
+  margin-left: 0.8em;
+  width: 290px;
+}
+#logoHelp {
+  font-size: 0.8em;
+  color: grey;
+  margin-left: 10em;
+}
+
+.make-appointment-btn {
+  border: 0;
+  background-color: #e79810;
+  padding: 15px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-left: 5em;
+  font-family: CircularStd;
+}
+
+.btn-link-providers {
+  text-align: center;
+  margin-top: 2em;
+}

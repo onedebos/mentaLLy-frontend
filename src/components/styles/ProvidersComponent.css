@@ -1,0 +1,32 @@
+@import 'reset.css';
+.display-providers-model {
+  margin: 2em 1em;
+  font-family: CircularStd;
+  max-width: 400px;
+  text-align: center;
+}
+
+.providers-name,
+.providers-buttons {
+  text-align: center;
+}
+
+.see-more {
+  margin-right: 0.5em;
+}
+
+.see-more,
+.book-appointment {
+  color: #916e05;
+  opacity: 0.9;
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.img-section-img {
+  border-radius: 20%;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 1.5em;
+}

@@ -1,0 +1,60 @@
+@import 'reset.css';
+.scream-div {
+  width: 100vw;
+}
+
+.screaming {
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+  height: 100vh;
+}
+.provider-bg {
+  display: grid;
+  overflow: hidden;
+}
+.provider-component-wrapper {
+  background-repeat: no-repeat;
+  font-family: CircularStd;
+  overflow: hidden;
+  background-color: white;
+  padding-bottom: 1em;
+  width: 400px;
+  position: absolute;
+
+  right: 0;
+  margin: 2em;
+  border-radius: 2%;
+}
+
+.provider-information-wrapper {
+  background-color: white;
+
+  padding: 2em;
+}
+
+.card-fields > :nth-child(even) {
+  background-color: #e2e3e5;
+}
+
+.provider-information-name {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-left: 0.5em;
+}
+
+.provider-information-description {
+  margin: 1em;
+  line-height: 1.5;
+}
+
+.provider-info-buttons {
+  margin-left: 2.5em;
+}
+.p-btn {
+  margin-bottom: 0.5em;
+}
+
+link:hover {
+  color: #a4c62f;
+}

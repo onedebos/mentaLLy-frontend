@@ -1,0 +1,11 @@
+@import 'reset.css';
+
+.grid-for-appointments-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.no-appointments {
+  font-family: CircularStd;
+  font-size: 2em;
+}

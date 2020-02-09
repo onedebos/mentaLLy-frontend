@@ -1,0 +1,27 @@
+@import 'reset';
+
+.card-wrapper {
+  font-family: 'CircularStd';
+  background-color: #eef4f7;
+  border-radius: 3%;
+  padding: 20px;
+  margin: 1em;
+}
+
+.p-name {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+.app-date-div,
+.app-time-div,
+.app-location-div {
+  margin-bottom: 0.5em;
+}
+
+.app-date-text,
+.app-time-text,
+.app-location-text {
+  font-weight: 600;
+}

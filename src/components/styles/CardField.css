@@ -1,0 +1,12 @@
+.card-block {
+  display: flex;
+  font-family: CircularStd;
+  justify-content: space-between;
+  max-width: 300px;
+  padding: 10px;
+  margin-left: 0.3em;
+}
+
+.card-block-info-1 {
+  font-weight: 600;
+}

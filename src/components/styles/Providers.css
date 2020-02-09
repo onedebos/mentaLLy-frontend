@@ -1,0 +1,11 @@
+@import 'reset';
+
+hr {
+  color: #efefef;
+  width: 100px;
+}
+
+.grid-for-providers-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}

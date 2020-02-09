@@ -1,0 +1,56 @@
+@import 'reset.css';
+
+.new-provider-form {
+  background-color: white;
+  position: absolute;
+  margin: 1em auto;
+  padding: 1rem 3rem;
+  border-radius: 1%;
+  width: 400px;
+  height: 520px;
+  font-family: CircularStd;
+  border: 1px solid #eef4f7;
+}
+
+.new-provider-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.description-label {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 0.8em;
+}
+
+.state-label {
+  font-weight: 600;
+  margin-right: 1em;
+  font-size: 1.2em;
+}
+
+.form-control-state {
+  border: 0;
+  padding: 1em;
+  width: 250px;
+  background-color: #eef4f7;
+  font-family: CircularStd;
+  margin-bottom: 1.5em;
+}
+
+.form-control-txtarea {
+  width: 320px;
+  height: 80px;
+  font-family: CircularStd;
+}
+
+.make-provider-btn {
+  border: 0;
+  background-color: #e79810;
+  padding: 15px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-left: 5em;
+  font-family: CircularStd;
+}

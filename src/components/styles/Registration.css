@@ -1,0 +1,11 @@
+.sign-up-wrapper {
+  background-color: white;
+  position: absolute;
+  margin: 3em auto;
+  padding: 1rem 3rem;
+  box-shadow: 3px 3px 5px 6px #cccccc;
+  border-radius: 1%;
+  width: 400px;
+  height: 720px;
+  font-family: CircularStd;
+}

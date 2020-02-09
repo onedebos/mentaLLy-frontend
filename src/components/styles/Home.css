@@ -1,0 +1,94 @@
+@import 'reset.css';
+
+.home-body {
+  background-image: url('https://images.unsplash.com/photo-1527203561188-dae1bc1a417f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=658&q=80');
+  background-repeat: no-repeat;
+  font-family: CircularStd;
+  overflow: hidden;
+  background-size: cover;
+  height: 100vh;
+}
+
+.logo-title {
+  font-size: 10em;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 0.2em;
+  color: white;
+  margin-top: 1em;
+}
+
+header p {
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-size: 1.4em;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.sign-up {
+  border: 0;
+  background-color: #9bbd0f;
+  color: white;
+  padding: 0.7em 1.5em;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em auto;
+  font-weight: 600;
+  font-size: 1.4em;
+  cursor: pointer;
+  border: 1px solid #9bbd0f;
+  border-radius: 10px;
+  font-family: CircularStd;
+
+  transition: 0.3s;
+}
+
+.menu {
+  margin: 1em;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu .search {
+  background-color: white;
+  padding: 0.5em 1.1em;
+  color: #d4a951;
+  border-radius: 20%;
+}
+
+.sign-up-arrow {
+  margin-left: 0.5em;
+}
+
+.signed-in {
+  margin-top: 1em;
+}
+
+.signed-in a {
+  color: #7e5608;
+  text-decoration: none;
+}
+
+.sign-in {
+  bottom: 0;
+  position: absolute;
+  margin: 2em 2em;
+  font-size: 1.2em;
+}
+
+.have-account {
+  position: absolute;
+  bottom: 0;
+  margin: 3em 1.8em;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}

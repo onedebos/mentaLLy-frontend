@@ -1,0 +1,84 @@
+@import 'reset.css';
+
+.login-bg {
+  background-color: #eef4f7;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.login-logo {
+  margin: 0.2em 0;
+  letter-spacing: 0.3em;
+  font-weight: 700;
+  color: #906717;
+  font-size: 1em;
+}
+
+.login-wrapper {
+  background-color: white;
+  position: absolute;
+  margin: 6em auto;
+  padding: 3rem;
+  box-shadow: 3px 3px 5px 6px #cccccc;
+  border-radius: 1%;
+  width: 400px;
+  height: 600px;
+  font-family: CircularStd;
+}
+
+.login-title {
+  font-size: 2em;
+  font-weight: 600;
+  padding-bottom: 1em;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.email-field {
+  padding-bottom: 1.5em;
+}
+
+.remember-me {
+  margin-top: 0.5em;
+  font-size: 1.1em;
+}
+
+.remember-me input {
+  margin-right: 0.5em;
+}
+
+.hr-3 {
+  width: 100%;
+}
+
+.login-errors {
+  color: red;
+  opacity: 0.7;
+  padding-bottom: 0.5em;
+}
+/* .login-btn button {
+  margin-top: 1.5em;
+  padding: 0.5em 1.5em;
+  border-radius: 5%;
+  border: 0;
+  background-color: #516270;
+  font-size: 1.2em;
+  color: white;
+  margin-bottom: 1.5em;
+}
+
+.forgot,
+.back-sign-up {
+  margin-top: 1em;
+}
+
+.forgot a,
+.back-sign-up a {
+  color: #6e70c0;
+  text-decoration: none;
+} */

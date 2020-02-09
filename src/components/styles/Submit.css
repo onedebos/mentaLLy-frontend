@@ -1,0 +1,24 @@
+@import 'reset.css';
+
+.login-btn button {
+  margin-top: 1.2em;
+  font-family: CircularStd;
+  padding: 0.5em 1.5em;
+  border-radius: 5%;
+  border: 0;
+  background-color: #516270;
+  font-size: 1.2em;
+  color: white;
+  margin-bottom: 1.2em;
+}
+
+.forgot,
+.back-sign-up {
+  margin-top: 1em;
+}
+
+.forgot a,
+.back-sign-up a {
+  color: #6e70c0;
+  text-decoration: none;
+}

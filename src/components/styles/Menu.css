@@ -1,0 +1,46 @@
+@import 'reset.css';
+
+.user-avatar {
+  border-radius: 23%;
+  margin-bottom: 1em;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5em;
+}
+
+.menu-bar {
+  padding-left: 3em;
+  max-width: 20vw;
+  height: 100vh;
+  font-family: circularStd;
+  border-right: 2px solid #efefef;
+  position: sticky;
+  top: 0;
+}
+
+.menu-logo {
+  margin: 2em 0;
+  letter-spacing: 0.3em;
+  font-weight: 700;
+  color: #906717;
+  font-size: 1.2em;
+}
+
+.menu-item {
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 800;
+  padding: 20px 0px;
+}
+
+.menu-item:target {
+  background-color: #906717;
+}
+
+.menu-item:active {
+  background-color: #906717;
+}
