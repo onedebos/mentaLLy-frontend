@@ -21,7 +21,7 @@ by React Views.
 
 ## Live Demo
 
-[Live Demo Link](https://mentallly.herokuapp.com)
+[Live Demo Link](https://awesome-kare-c984ee.netlify.com/)
 
 ## Getting Started
 
