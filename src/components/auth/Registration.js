@@ -1,5 +1,4 @@
 /* eslint-disable camelcase */
-/* eslint-disable react/forbid-prop-types */
 import React, { Component } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
@@ -117,13 +116,12 @@ export class Registration extends Component {
 }
 Registration.propTypes = {
   handleLogin: PropTypes.func,
-  history: PropTypes.object,
+  history: PropTypes.instanceOf(Object).isRequired,
   push: PropTypes.string,
 };
 
 Registration.defaultProps = {
   push: '',
-  history: {},
   handleLogin: () => {},
 };
 

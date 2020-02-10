@@ -1,5 +1,4 @@
 /* eslint-disable import/no-duplicates */
-/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles/Home.css';
@@ -65,13 +64,12 @@ class Home extends React.Component {
 }
 Home.propTypes = {
   handleLogin: PropTypes.func,
-  history: PropTypes.object,
+  history: PropTypes.instanceOf(Object).isRequired,
   loggedInStatus: PropTypes.string,
 };
 
 Home.defaultProps = {
   handleLogin: () => {},
-  history: {},
   loggedInStatus: '',
 };
 

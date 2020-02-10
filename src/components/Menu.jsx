@@ -73,12 +73,11 @@ export default class Menu extends Component {
 }
 Menu.propTypes = {
   handleLogout: PropTypes.func,
-  userStatus: PropTypes.object,
+  userStatus: PropTypes.instanceOf(Object).isRequired,
   loggedInStatus: PropTypes.string,
 };
 
 Menu.defaultProps = {
   handleLogout: () => {},
-  loggedInStatus: {},
-  userStatus: {},
+  loggedInStatus: '',
 };

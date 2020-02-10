@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
 /* eslint-disable no-nested-ternary */
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -100,13 +99,8 @@ class UserAppointment extends React.Component {
   }
 }
 UserAppointment.propTypes = {
-  history: PropTypes.object,
-  userStatus: PropTypes.object,
-};
-
-UserAppointment.defaultProps = {
-  history: {},
-  userStatus: {},
+  history: PropTypes.instanceOf(Object).isRequired,
+  userStatus: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default UserAppointment;

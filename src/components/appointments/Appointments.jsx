@@ -92,11 +92,10 @@ class Appointments extends React.Component {
 
 Appointments.propTypes = {
   history: PropTypes.string,
-  match: PropTypes.number,
+  match: PropTypes.instanceOf(Object).isRequired,
 };
 
 Appointments.defaultProps = {
   history: '',
-  match: 1,
 };
 export default Appointments;

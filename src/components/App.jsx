@@ -2,7 +2,9 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import axios from 'axios';
+import { connect } from 'react-redux';
 import API_URL from './helpers/apiUrl';
 import Menu from './Menu';
 import Home from './Home';
@@ -16,13 +18,14 @@ import Login from './auth/Login';
 import Appointments from './appointments/Appointments';
 import UserAppointment from './appointments/UserAppointment';
 import './styles/App.css';
+import { storeUser } from '../actions/index';
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       loggedInStatus: 'NOT_LOGGED_IN',
-      user: {},
+      errors: '',
     };
 
     this.handleLogin = this.handleLogin.bind(this);
@@ -35,40 +38,52 @@ export default class App extends Component {
 
   checkLoginStatus() {
     const { loggedInStatus } = this.state;
+    const { storeCurrentUser } = this.props;
     axios
       .get(`${API_URL}/api/v1/logged_in`, { withCredentials: true })
       .then(response => {
         if (response.data.logged_in && loggedInStatus === 'NOT_LOGGED_IN') {
           this.setState({
             loggedInStatus: 'LOGGED_in',
-            user: response.data.user,
           });
+
+          storeCurrentUser(response.data.user);
         } else if (!response.data.logged_in && loggedInStatus === 'LOGGED_IN') {
           this.setState({
             loggedInStatus: 'NOT_LOGGED_in',
-            user: {},
           });
         }
       })
-      .catch(error => error);
+      .catch(error => {
+        this.setState({
+          errors: error,
+        });
+      });
   }
 
   handleLogout() {
+    const { storeCurrentUser } = this.props;
     this.setState({
       loggedInStatus: 'NOT_LOGGED_IN',
-      user: {},
     });
+    storeCurrentUser({});
   }
 
   handleLogin(data) {
     this.setState({
       loggedInStatus: 'LOGGED_in',
-      user: data.user,
     });
+    const { storeCurrentUser } = this.props;
+    const { user } = data;
+    storeCurrentUser(user);
   }
 
   render() {
-    const { loggedInStatus, user } = this.state;
+    const { loggedInStatus, errors } = this.state;
+    const { user } = this.props;
+    if (errors.length > 0) {
+      return <p className="login-errors">{errors}</p>;
+    }
 
     return (
       <div>
@@ -168,3 +183,20 @@ export default class App extends Component {
     );
   }
 }
+App.propTypes = {
+  storeCurrentUser: PropTypes.func,
+  user: PropTypes.objectOf(PropTypes.object).isRequired,
+};
+
+App.defaultProps = {
+  storeCurrentUser: () => {},
+};
+const mapStateToProps = state => ({
+  user: state.user,
+});
+
+const mapDispatchToProps = dispatch => ({
+  storeCurrentUser: user => dispatch(storeUser(user)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

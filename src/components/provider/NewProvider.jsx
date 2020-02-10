@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import API_URL from '../helpers/apiUrl';
@@ -141,13 +140,12 @@ class NewProvider extends React.Component {
 }
 
 NewProvider.propTypes = {
-  history: PropTypes.object,
+  history: PropTypes.instanceOf(Object).isRequired,
   push: PropTypes.string,
 };
 
 NewProvider.defaultProps = {
   push: '',
-  history: {},
 };
 
 export default NewProvider;

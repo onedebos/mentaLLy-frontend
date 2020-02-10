@@ -162,15 +162,13 @@ class EditProvider extends React.Component {
   }
 }
 EditProvider.propTypes = {
-  history: PropTypes.object,
-  match: PropTypes.object,
+  history: PropTypes.instanceOf(Object).isRequired,
+  match: PropTypes.instanceOf(Object).isRequired,
   push: PropTypes.string,
 };
 
 EditProvider.defaultProps = {
   push: '',
-  history: {},
-  match: {},
 };
 
 export default EditProvider;

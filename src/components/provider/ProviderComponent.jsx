@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable react/forbid-prop-types */
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -117,16 +117,13 @@ class Provider extends React.Component {
 }
 
 Provider.propTypes = {
-  match: PropTypes.object,
-  history: PropTypes.object,
-  userStatus: PropTypes.object,
+  match: PropTypes.instanceOf(Object).isRequired,
+  history: PropTypes.instanceOf(Object).isRequired,
+  userStatus: PropTypes.instanceOf(Object).isRequired,
   push: PropTypes.string,
 };
 
 Provider.defaultProps = {
   push: '',
-  match: {},
-  history: {},
-  userStatus: {},
 };
 export default Provider;

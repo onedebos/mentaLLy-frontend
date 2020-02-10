@@ -1,5 +1,4 @@
 /* eslint-disable camelcase */
-/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -46,15 +45,6 @@ class NewAppointment extends React.Component {
       .catch(() => history.push('/providers'));
   }
 
-  static getDerivedStateFromProps(props, state) {
-    if (props.userStatus.id !== state.user_id) {
-      return {
-        user_id: props.userStatus.id,
-      };
-    }
-    return null;
-  }
-
   onChange(event) {
     this.setState({
       [event.target.name]: event.target.value,
@@ -95,7 +85,7 @@ class NewAppointment extends React.Component {
         }
         throw new Error('Network response was not ok.');
       })
-      .then(this.setState({ errors: 'City cannot be empty. ' }))
+      .then(this.setState({ errors: 'Select resident state. ' }))
       .catch(error => error.message);
   }
 
@@ -159,14 +149,9 @@ class NewAppointment extends React.Component {
 }
 
 NewAppointment.propTypes = {
-  history: PropTypes.object,
-  match: PropTypes.object,
-  userStatus: PropTypes.object,
+  history: PropTypes.instanceOf(Object).isRequired,
+  match: PropTypes.instanceOf(Object).isRequired,
+  userStatus: PropTypes.instanceOf(Object).isRequired,
 };
 
-NewAppointment.defaultProps = {
-  history: {},
-  match: {},
-  userStatus: {},
-};
 export default NewAppointment;

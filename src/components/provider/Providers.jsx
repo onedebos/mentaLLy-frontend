@@ -73,13 +73,12 @@ class Providers extends React.Component {
 
 Providers.propTypes = {
   loggedInStatus: PropTypes.string,
-  history: PropTypes.object,
+  history: PropTypes.instanceOf(Object).isRequired,
   push: PropTypes.string,
 };
 
 Providers.defaultProps = {
   push: '',
   loggedInStatus: '',
-  history: {},
 };
 export default Providers;

@@ -104,13 +104,12 @@ export class Login extends Component {
 
 Login.propTypes = {
   handleLogin: PropTypes.func,
-  history: PropTypes.object,
+  history: PropTypes.instanceOf(Object).isRequired,
   push: PropTypes.string,
 };
 
 Login.defaultProps = {
   push: '',
-  history: {},
   handleLogin: () => {},
 };
 
