@@ -29,17 +29,14 @@ by React Views.
 
 To get a local copy up and running follow these simple example steps.
 
+The backend is available [here](https://github.com/onedebos/mentaLY-rails-API)
+
 ### Prerequisites
 
-- Make sure to have Rails 6.0 and Ruby 2.5.1
+- npm
+- node
 
 ### Install
-
-Install the Ruby Gems required by rails
-
-```
-bundle install
-```
 
 Install the packages required by React
 
@@ -49,13 +46,11 @@ npm install or yarn install
 
 ### Usage
 
-To use the app, start the rails server using
+In a terminal window,
 
 ```
-rails s
+npm install
 ```
-
-In a seperate terminal window, start Webpack using
 
 ```
 npm start
@@ -77,16 +72,6 @@ To access the Admin account/panel, use the following information.
 - password: password
 
 - Admin can create a new provider.
-
-### Run tests
-
-Run model tests
-
-```
-bundle exec rspec
-```
-
-### Deployment
 
 ## Authors
 
