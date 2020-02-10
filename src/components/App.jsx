@@ -185,7 +185,7 @@ class App extends Component {
 }
 App.propTypes = {
   storeCurrentUser: PropTypes.func,
-  user: PropTypes.objectOf(PropTypes.object).isRequired,
+  user: PropTypes.instanceOf(Object).isRequired,
 };
 
 App.defaultProps = {
