@@ -17,7 +17,6 @@ class NewAppointment extends React.Component {
       time: '',
       user_id: userStatus.id,
       provider: { name: '' },
-      errors: '',
     };
 
     this.onChange = this.onChange.bind(this);
@@ -85,22 +84,20 @@ class NewAppointment extends React.Component {
         }
         throw new Error('Network response was not ok.');
       })
-      .then(this.setState({ errors: 'Select resident state. ' }))
+      .then()
       .catch(error => error.message);
   }
 
   render() {
-    const { provider, errors, time } = this.state;
+    const { provider, time } = this.state;
     const onChangeTime = time => this.setState({ time });
     const displayStatesInNigeria = () =>
       statesInNigeria.map(state => <option key={state}>{state}</option>);
-    const displayErrors = () => <div className="login-errors">{errors}</div>;
 
     return (
       <div className="make-appointment-bg">
         <div className="make-appointment-container">
           <div className="make-appointment-wrapper">
-            {errors.length > 0 ? displayErrors() : ''}
             <h1 className="make-appointment-title">Make an appointment with {provider.name}</h1>
             <form onSubmit={this.onSubmit}>
               <div className="form-group">

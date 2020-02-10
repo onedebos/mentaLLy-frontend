@@ -1,7 +1,5 @@
-/* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../styles/Providers.css';
 import PropTypes from 'prop-types';
 import { uuid } from 'uuidv4';
@@ -46,25 +44,18 @@ class Providers extends React.Component {
         />
       </div>
     ));
-    const noProvider = (
-      <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">
-        <h4>
-          No Providers yet. Why not <Link to="/new_provider">create one</Link>
-        </h4>
-      </div>
-    );
 
     return (
       <>
-        {loggedInStatus === 'LOGGED_in' ? (
+        {loggedInStatus === 'LOGGED_in' && providers ? (
           <div>
             <DisplayAllTitles main="OUR PARTNERS" sub="Select a provider to book an appointment." />
             <div className="grid-for-providers-list">
-              {providers.length > 0 ? allProviders : noProvider}
+              {providers.length > 0 ? allProviders : <div>''</div>}
             </div>
           </div>
         ) : (
-          <div>You're not logged in</div>
+          <div>''</div>
         )}
       </>
     );

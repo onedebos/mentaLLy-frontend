@@ -84,15 +84,19 @@ class UserAppointment extends React.Component {
       <>
         <div>
           <DisplayAllTitles main="YOUR APPOINTMENTS" sub="All your appointments in one place." />
-          <div className="grid-for-appointments-list">
-            {filterWithUserId.length > 0 && userStatus.admin === false
-              ? showUserAppointments
-              : appointments.length > 0 && userStatus.admin === true
-              ? showAdminAppointments
-              : filterWithUserId.length < 1
-              ? noAppointments
-              : ''}
-          </div>
+          {appointments.length < 1 && providers.length < 1 ? (
+            <div>&apos;</div>
+          ) : (
+            <div className="grid-for-appointments-list">
+              {filterWithUserId.length > 0 && userStatus.admin === false
+                ? showUserAppointments
+                : appointments.length > 0 && userStatus.admin === true
+                ? showAdminAppointments
+                : filterWithUserId.length < 1
+                ? noAppointments
+                : ''}
+            </div>
+          )}
         </div>
       </>
     );
