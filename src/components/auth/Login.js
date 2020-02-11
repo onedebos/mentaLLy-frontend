@@ -4,6 +4,7 @@ import axios from 'axios';
 import '../styles/Login.css';
 import PropTypes from 'prop-types';
 import API_URL from '../helpers/apiUrl';
+import revealPass from '../helpers/revealPassword';
 import Field from './Field';
 import Submit from './Submit';
 
@@ -60,15 +61,6 @@ export class Login extends Component {
   render() {
     const { email, password, LoginErrors } = this.state;
 
-    const revealPass = () => {
-      const pwdField = document.getElementById('password');
-      if (pwdField.type === 'password') {
-        pwdField.type = 'text';
-      } else {
-        pwdField.type = 'password';
-      }
-    };
-
     return (
       <div className="login-bg">
         <div className="login-wrapper">
@@ -92,9 +84,9 @@ export class Login extends Component {
               name="password"
               id="password"
             />
-            <div className="remember-me">
+            <div className="revealPass">
               <input type="checkbox" onClick={revealPass} />
-              <label htmlFor="remember-me">Show Password</label>
+              <label htmlFor="revealPass">Show Password</label>
             </div>
             <Submit
               buttonType="submit"

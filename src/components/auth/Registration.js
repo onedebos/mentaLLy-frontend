@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import revealPass from '../helpers/revealPassword';
 import Field from './Field';
 import Submit from './Submit';
 import API_URL from '../helpers/apiUrl';
@@ -100,6 +101,10 @@ export class Registration extends Component {
               name="password_confirmation"
               id="password_confirmation"
             />
+            <div className="revealPass">
+              <input type="checkbox" onClick={revealPass} />
+              <label htmlFor="revealPass">Show Password</label>
+            </div>
             <Submit
               buttonType="submit"
               buttonText="Sign up"

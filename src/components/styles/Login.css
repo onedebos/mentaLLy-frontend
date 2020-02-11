@@ -42,12 +42,12 @@
   padding-bottom: 1.5em;
 }
 
-.remember-me {
+.revealPass {
   margin-top: 0.5em;
   font-size: 1.1em;
 }
 
-.remember-me input {
+.revealPass input {
   margin-right: 0.5em;
 }
 
@@ -72,7 +72,7 @@
     height: 450px;
   }
 
-  .remember-me {
+  .revealPass {
     margin: 0;
     font-size: 1em;
     margin-bottom: 0.5em;
