@@ -1,0 +1,32 @@
+.menuMobile {
+  display: none;
+}
+
+.menuIcon {
+  display: none;
+}
+
+@media screen and (min-device-width: 350px) and (max-device-width: 575px) {
+  .menuMobile {
+    display: block;
+    margin: 1em;
+    color: #ab7c1d;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: CircularStd;
+  }
+
+  .menuMobile {
+    padding: 0.5em;
+  }
+
+  .HomeMenuItem {
+    margin: 0 0.5em;
+    flex-direction: column;
+  }
+
+  .menuIcon {
+    display: block;
+  }
+}

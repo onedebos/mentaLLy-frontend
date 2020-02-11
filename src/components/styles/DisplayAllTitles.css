@@ -16,3 +16,9 @@
 .providers-subheading {
   margin: 1em 0;
 }
+
+@media screen and (min-device-width: 350px) and (max-device-width: 575px) {
+  .providers-page-title {
+    margin-top: 0;
+  }
+}

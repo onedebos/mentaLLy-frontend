@@ -7,6 +7,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import API_URL from './helpers/apiUrl';
 import Menu from './Menu';
+import MobileMenu from './MobileMenu';
 import Home from './Home';
 import Providers from './provider/Providers';
 import ProviderComponent from './provider/ProviderComponent';
@@ -121,6 +122,7 @@ class App extends Component {
                   userStatus={user}
                   handleLogout={this.handleLogout}
                 />
+                <MobileMenu userStatus={user} handleLogout={this.handleLogout} />
 
                 <Route
                   exact
