@@ -9,3 +9,13 @@
   height: 720px;
   font-family: CircularStd;
 }
+
+@media screen and (min-device-width: 350px) and (max-device-width: 575px) {
+  .sign-up-wrapper {
+    width: 250px;
+    padding: 1rem 2rem;
+    overflow: hidden;
+    margin: 1.5em auto;
+    height: 600px;
+  }
+}

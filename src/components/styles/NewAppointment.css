@@ -75,3 +75,53 @@
   text-align: center;
   margin-top: 2em;
 }
+
+@media screen and (min-device-width: 350px) and (max-device-width: 575px) {
+  .make-appointment-wrapper {
+    width: 250px;
+    padding: 0.5em 2rem;
+    position: relative;
+  }
+
+  .make-appointment-container {
+    display: block;
+  }
+
+  .make-appointment-bg {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .make-appointment-title {
+    font-size: 1.2em;
+  }
+
+  .res-state {
+    text-align: left;
+    margin-bottom: 0.5em;
+  }
+
+  #city,
+  #date,
+  #time {
+    margin-left: -1.5em;
+    padding: 0.5em;
+    width: 200px;
+  }
+
+  #city {
+    width: 220px;
+  }
+
+  .make-appointment-btn {
+    padding: 10px;
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+    margin: 1em 2em;
+  }
+
+  .TimePicker {
+    margin-top: 1em;
+  }
+}

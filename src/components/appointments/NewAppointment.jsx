@@ -112,18 +112,11 @@ class NewAppointment extends React.Component {
                 <div className="res-state">
                   <label htmlFor="Date">Date:</label>
                 </div>
-                <input
-                  type="date"
-                  name="date"
-                  id="date"
-                  required
-                  placeholder="12/02/2020"
-                  onChange={this.onChange}
-                />
+                <input type="date" name="date" id="date" required onChange={this.onChange} />
               </div>
               <div className="form-group">
                 <div>
-                  <TimePicker onChange={onChangeTime} value={time} />
+                  <TimePicker className="TimePicker" onChange={onChangeTime} value={time} />
                 </div>
                 <small id="logoHelp">24hr clock</small>
               </div>

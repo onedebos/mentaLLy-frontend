@@ -7,3 +7,9 @@ hr {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
+@media screen and (min-device-width: 350px) and (max-device-width: 575px) {
+  .grid-for-providers-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -21,7 +21,6 @@
   padding-bottom: 1em;
   width: 400px;
   position: absolute;
-
   right: 0;
   margin: 2em;
   border-radius: 2%;
@@ -29,7 +28,6 @@
 
 .provider-information-wrapper {
   background-color: white;
-
   padding: 2em;
 }
 
@@ -57,4 +55,17 @@
 
 link:hover {
   color: #a4c62f;
+}
+@media screen and (min-device-width: 350px) and (max-device-width: 575px) {
+  .provider-bg {
+    overflow: auto;
+  }
+
+  .provider-component-wrapper {
+    width: 280px;
+  }
+
+  .screaming {
+    height: 100%;
+  }
 }

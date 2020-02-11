@@ -4,6 +4,7 @@
   font-family: CircularStd;
   overflow: hidden;
   background-size: cover;
+  background-position: center;
   height: 100vh;
 }
 
@@ -16,7 +17,7 @@
   margin-top: 1em;
 }
 
-header p {
+.Book {
   color: white;
   display: flex;
   justify-content: center;
@@ -89,4 +90,70 @@ header p {
 a,
 a:hover {
   text-decoration: none;
+}
+
+.items {
+  display: flex;
+  flex-direction: row;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.HomeMenuItem {
+  display: flex;
+  height: 30px;
+  width: 80px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.HomeMenuIn,
+.HomeMenuUp {
+  color: white;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.menu {
+  padding: 1em;
+}
+
+@media screen and (min-device-width: 1200px) {
+  .home-body {
+    background-size: cover;
+    background-position: 60% 40%;
+    background-color: #cea952;
+  }
+}
+
+@media screen and (min-device-width: 350px) and (max-device-width: 575px) {
+  .logo-title {
+    font-size: 3.2rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+  }
+
+  .Book {
+    font-size: 1em;
+  }
+
+  .sign-up {
+    margin: 1.5em auto;
+  }
+
+  .have-account {
+    color: #a1bc16;
+    font-weight: 600;
+    text-shadow: 0.3px 0.3px black;
+  }
+
+  .sign-in {
+    bottom: -1;
+    color: white;
+    position: absolute;
+    margin: 1em 1.5em;
+    font-size: 1.2em;
+    font-weight: 600;
+  }
 }

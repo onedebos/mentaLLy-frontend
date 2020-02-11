@@ -17,3 +17,13 @@
 .label {
   font-family: CircularStd;
 }
+
+@media screen and (min-device-width: 350px) and (max-device-width: 575px) {
+  .field {
+    width: 240px;
+  }
+
+  .password-field {
+    padding-bottom: 0;
+  }
+}
