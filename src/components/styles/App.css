@@ -7,6 +7,10 @@
   background-color: #96be0f;
 }
 
+input:focus {
+  background-color: #f7f6ee;
+}
+
 @media screen and (min-device-width: 350px) and (max-device-width: 575px) {
   .App-styles {
     grid-template-columns: auto;
