@@ -3,11 +3,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles/Home.css';
 import PropTypes from 'prop-types';
-
 import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import expand from './helpers/menuResponse';
 
 class Home extends React.Component {
   constructor(props) {
@@ -28,9 +27,20 @@ class Home extends React.Component {
     return (
       <div className="home-body">
         <header>
-          <div className="menu">
-            <FontAwesomeIcon className="menu-icon" icon={faBars} />
-            <FontAwesomeIcon className="menu-icon" icon={faSearch} />
+          <div className="menu" id="HomeMenu">
+            <FontAwesomeIcon className="MenuIcon" id="MenuIcon" icon={faBars} onClick={expand} />
+            <div className="items" id="items">
+              <div className="HomeMenuItem">
+                <Link to="/login" className="HomeMenuIn">
+                  Sign in
+                </Link>
+              </div>
+              <div className="HomeMenuItem">
+                <Link to="/sign_up" className="HomeMenuUp">
+                  Sign up
+                </Link>
+              </div>
+            </div>
           </div>
 
           <h1 className="logo-title">MentaLLy</h1>
