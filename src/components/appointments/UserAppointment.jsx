@@ -97,6 +97,11 @@ class UserAppointment extends React.Component {
                 : ''}
             </div>
           )}
+          <div className="btn-link-providers">
+            <Link to="/providers" className="btn-link-providers">
+              Back to Providers
+            </Link>
+          </div>
         </div>
       </>
     );

@@ -7,3 +7,14 @@
   font-family: CircularStd;
   font-size: 2em;
 }
+
+@media screen and (min-device-width: 350px) and (max-device-width: 575px) {
+  .grid-for-appointments-list {
+    grid-template-columns: 1fr;
+  }
+
+  .no-appointments {
+    font-size: 1em;
+    text-align: center;
+  }
+}

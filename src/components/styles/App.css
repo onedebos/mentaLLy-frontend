@@ -6,3 +6,9 @@
 .active {
   background-color: #96be0f;
 }
+
+@media screen and (min-device-width: 350px) and (max-device-width: 575px) {
+  .App-styles {
+    grid-template-columns: auto;
+  }
+}

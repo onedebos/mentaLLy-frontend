@@ -92,6 +92,33 @@ a:hover {
   text-decoration: none;
 }
 
+.items {
+  display: flex;
+  flex-direction: row;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.HomeMenuItem {
+  display: flex;
+  height: 30px;
+  width: 80px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.HomeMenuIn,
+.HomeMenuUp {
+  color: white;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.menu {
+  padding: 1em;
+}
+
 @media screen and (min-device-width: 1200px) {
   .home-body {
     background-size: cover;
@@ -128,32 +155,5 @@ a:hover {
     margin: 1em 1.5em;
     font-size: 1.2em;
     font-weight: 600;
-  }
-
-  .items {
-    display: flex;
-    flex-direction: row;
-    transform: scaleX(0);
-    transform-origin: left;
-  }
-
-  .HomeMenuItem {
-    display: flex;
-    height: 30px;
-    width: 80px;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-  }
-
-  .HomeMenuIn,
-  .HomeMenuUp {
-    color: white;
-    text-decoration: underline;
-    font-weight: 600;
-  }
-
-  .menu {
-    padding: 1em;
   }
 }
