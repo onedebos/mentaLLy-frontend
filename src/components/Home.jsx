@@ -34,7 +34,7 @@ class Home extends React.Component {
           </div>
 
           <h1 className="logo-title">MentaLLy</h1>
-          <p>Book mental health services across Nigeria.</p>
+          <p className="Book">Book mental health services across Nigeria.</p>
           {loggedInStatus === 'NOT_LOGGED_IN' ? (
             <div>
               <Link to="/sign_up">
