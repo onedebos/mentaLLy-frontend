@@ -35,10 +35,8 @@
   padding: 20px 0px;
 }
 
-.menu-item:target {
-  background-color: #906717;
-}
-
-.menu-item:active {
-  background-color: #906717;
+@media screen and (min-device-width: 350px) and (max-device-width: 575px) {
+  .menu-bar {
+    display: none;
+  }
 }

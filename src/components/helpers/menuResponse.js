@@ -10,6 +10,7 @@ const expand = () => {
     document.getElementById('items').style.transform = 'scaleX(0)';
     document.getElementById('MenuIcon').style.transform = 'rotate(0deg)';
     document.getElementById('HomeMenu').style.backgroundColor = '';
+    document.getElementById('HomeMenu').style.opacity = '';
     state = false;
   }
 };

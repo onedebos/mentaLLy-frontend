@@ -20,3 +20,9 @@
   color: #6e70c0;
   text-decoration: none;
 }
+
+@media screen and (min-device-width: 350px) and (max-device-width: 575px) {
+  .login-btn button {
+    margin-top: 0;
+  }
+}
