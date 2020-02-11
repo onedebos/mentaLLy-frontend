@@ -73,7 +73,9 @@
   }
 
   .remember-me {
-    display: none;
+    margin: 0;
+    font-size: 1em;
+    margin-bottom: 0.5em;
   }
 
   .label {

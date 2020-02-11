@@ -60,6 +60,15 @@ export class Login extends Component {
   render() {
     const { email, password, LoginErrors } = this.state;
 
+    const revealPass = () => {
+      const pwdField = document.getElementById('password');
+      if (pwdField.type === 'password') {
+        pwdField.type = 'text';
+      } else {
+        pwdField.type = 'password';
+      }
+    };
+
     return (
       <div className="login-bg">
         <div className="login-wrapper">
@@ -84,8 +93,8 @@ export class Login extends Component {
               id="password"
             />
             <div className="remember-me">
-              <input type="checkbox" />
-              <label htmlFor="remember-me">Remember me</label>
+              <input type="checkbox" onClick={revealPass} />
+              <label htmlFor="remember-me">Show Password</label>
             </div>
             <Submit
               buttonType="submit"
