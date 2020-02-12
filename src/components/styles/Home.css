@@ -42,8 +42,12 @@
   border: 1px solid #9bbd0f;
   border-radius: 10px;
   font-family: CircularStd;
+  transition: all ease-in-out 0.3s;
+}
 
-  transition: 0.3s;
+.sign-up:target,
+.sign-up:hover {
+  border-radius: 20px 0;
 }
 
 .menu {

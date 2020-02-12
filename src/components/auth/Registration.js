@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import React, { Component } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
@@ -15,7 +14,7 @@ export class Registration extends Component {
       name: '',
       email: '',
       password: '',
-      password_confirmation: '',
+      passwordConfirmation: '',
       registrationErrors: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,7 +33,7 @@ export class Registration extends Component {
   }
 
   handleSubmit(e) {
-    const { name, email, password, password_confirmation } = this.state;
+    const { name, email, password, passwordConfirmation } = this.state;
     e.preventDefault();
     axios
       .post(
@@ -43,7 +42,7 @@ export class Registration extends Component {
           name,
           email,
           password,
-          password_confirmation,
+          password_confirmation: passwordConfirmation,
         },
         {
           withCredentials: true,
@@ -60,7 +59,7 @@ export class Registration extends Component {
   }
 
   render() {
-    const { name, email, password, password_confirmation, registrationErrors } = this.state;
+    const { name, email, password, passwordConfirmation, registrationErrors } = this.state;
 
     return (
       <div className="login-bg">
@@ -95,11 +94,11 @@ export class Registration extends Component {
             />
             <Field
               label="Re-enter password"
-              value={password_confirmation}
+              value={passwordConfirmation}
               onChange={this.handleChange}
               type="password"
-              name="password_confirmation"
-              id="password_confirmation"
+              name="passwordConfirmation"
+              id="passwordConfirmation"
             />
             <div className="revealPass">
               <input type="checkbox" onClick={revealPass} />
