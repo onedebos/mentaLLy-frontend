@@ -81,8 +81,9 @@
 .sign-in {
   bottom: 0;
   position: absolute;
-  margin: 2em 2em;
+  margin: 1.2em 1.5em;
   font-size: 1.2em;
+  color: #546604;
 }
 
 .have-account {
