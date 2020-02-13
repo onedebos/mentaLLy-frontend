@@ -84,6 +84,8 @@ npm start
 
 - npm
 - node
+- ruby 2.5
+- rails
 
 ## Authors
 
