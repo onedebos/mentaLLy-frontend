@@ -63,7 +63,7 @@ class Home extends React.Component {
             </div>
           ) : (
             <p className="signed-in">
-              You are signed in. &apos
+              You are signed in. &apos;
               <Link to="/providers">See our partners</Link>
             </p>
           )}
