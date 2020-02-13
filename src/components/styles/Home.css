@@ -71,6 +71,10 @@
 
 .signed-in {
   margin-top: 1em;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1em;
 }
 
 .signed-in a {

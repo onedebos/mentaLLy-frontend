@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import API_URL from '../helpers/apiUrl';
+import API_URL from '../../components/helpers/apiUrl';
 
 class Appointments extends React.Component {
   constructor(props) {
@@ -63,28 +63,30 @@ class Appointments extends React.Component {
 
     return (
       <div className="">
-        <div className="container py-5">
-          <div className="row">
-            <div className="col-sm-12 col-lg-3">
-              <ul className="list-group" key={appointment.id}>
-                <h5 className="mb-2">Details</h5>
-                <li>{appointment.city}</li>
-                <li>{appointment.date}</li>
-                <li>{appointment.time}</li>
-              </ul>
+        <main>
+          <div className="container py-5">
+            <div className="row">
+              <div className="col-sm-12 col-lg-3">
+                <ul className="list-group" key={appointment.id}>
+                  <h5 className="mb-2">Details</h5>
+                  <li>{appointment.city}</li>
+                  <li>{appointment.date}</li>
+                  <li>{appointment.time}</li>
+                </ul>
+              </div>
+
+              <div className="col-sm-12 col-lg-2">
+                <button type="button" className="btn btn-danger" onClick={this.deleteProvider}>
+                  Delete Provider
+                </button>
+              </div>
             </div>
 
-            <div className="col-sm-12 col-lg-2">
-              <button type="button" className="btn btn-danger" onClick={this.deleteProvider}>
-                Delete Provider
-              </button>
-            </div>
+            <Link to="/providers" className="btn btn-link">
+              Back to providers
+            </Link>
           </div>
-
-          <Link to="/providers" className="btn btn-link">
-            Back to providers
-          </Link>
-        </div>
+        </main>
       </div>
     );
   }

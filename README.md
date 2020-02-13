@@ -29,53 +29,63 @@ by React Views.
 
 To get a local copy up and running follow these simple example steps.
 
-The backend is available [here](https://github.com/onedebos/mentaLY-rails-API)
-
-### Prerequisites
-
-- npm
-- node
-
-### Install
-
-Install the packages required by React
+- git clone the frontend repo
 
 ```
-npm install or yarn install
+git clone https://github.com/onedebos/mentaLLy-frontend.git
 ```
 
-### Usage
+- git clone the backend repo if you want to run the server on your local machine. Otherwise, skip the next 3 steps.
 
-In a terminal window,
+```
+git clone https://github.com/onedebos/mentaLY-rails-API.git
+```
+
+- cd into the backend repo and install the gems
+
+```
+bundle install
+```
+
+- run the rails server on port 3001
+
+```
+rails s -p 3001
+```
+
+- If you decide to run the server locally, cd into the frontend repo. Navigate to src/components/helper/apiUrl.js and change the API_URL string to
+
+```
+http://localhost:3001
+```
+
+- run
 
 ```
 npm install
 ```
 
+to install all packages. then
+
 ```
 npm start
 ```
 
-navigate to
+- to start the app in the browser.
 
-```
-http://localhost:3000
-```
-
-in your browser. You should see the app running!
-
-You can sign up and sign in from here.
-
-To access the Admin account/panel, use the following information.
+- To access the Admin account/panel, use the following information.
 
 - email: admin@mentallybook.com
 - password: password
 
 - Admin can create a new provider.
 
-## Authors
+### Prerequisites
 
-👤 **Adebola**
+- npm
+- node
+
+## Authors
 
 👤 **Adebola**
 

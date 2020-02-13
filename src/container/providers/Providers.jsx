@@ -1,11 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import '../styles/Providers.css';
+import '../../components/styles/Providers.css';
 import PropTypes from 'prop-types';
 import { uuid } from 'uuidv4';
-import API_URL from '../helpers/apiUrl';
-import ProvidersComponent from './ProvidersComponent';
-import DisplayAllTitles from '../auth/DisplayAllTtitles';
+import API_URL from '../../components/helpers/apiUrl';
+import ProvidersComponent from '../../components/provider/ProvidersComponent';
+import DisplayAllTitles from '../../components/auth/DisplayAllTtitles';
 
 class Providers extends React.Component {
   constructor(props) {

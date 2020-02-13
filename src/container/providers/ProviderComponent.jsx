@@ -1,11 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import API_URL from '../helpers/apiUrl';
-import CardField from '../auth/CardField';
-import '../styles/ProviderComponent.css';
+import API_URL from '../../components/helpers/apiUrl';
+import CardField from '../../components/auth/CardField';
+import '../../components/styles/ProviderComponent.css';
 
 class Provider extends React.Component {
   constructor(props) {
@@ -68,49 +67,51 @@ class Provider extends React.Component {
 
     return (
       <div className="provider-bg">
-        <div className="scream-div">
-          <img
-            alt="man"
-            className="screaming"
-            src="https://images.unsplash.com/photo-1521119989659-a83eee488004?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=664&q=80"
-          />
-        </div>
-        <div className="provider-component-wrapper">
-          <div className="provider-information-wrapper">
-            <div className="provider-information-name-div">
-              <h3 className="provider-information-name">{provider.name}</h3>
-            </div>
-            <div className="card-fields">
-              <CardField infoOne="E-mail:" infoTwo={provider.email} />
-              <CardField infoOne="State: " infoTwo={provider.state} />
-            </div>
-            <div className="provider-information-description">{provider.description}</div>
+        <main>
+          <div className="scream-div">
+            <img
+              alt="man"
+              className="screaming"
+              src="https://images.unsplash.com/photo-1521119989659-a83eee488004?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=664&q=80"
+            />
           </div>
-          <div className="provider-info-buttons">
-            <div className="p-btn">
-              <Link to="/providers" className="provider-info-btns">
-                Back to our partners
-              </Link>
-            </div>
-            <div className="p-btn">
-              <Link to={`/make_appointment/${provider.id}`} className="provider-info-btns">
-                Book an appointment with {provider.name}
-              </Link>
-            </div>
-
-            {userStatus.admin === true ? (
-              <div>
-                <div className="p-btn">
-                  <Link to="" onClick={this.deleteProvider} className="provider-info-btns">
-                    Delete Partner
-                  </Link>
-                </div>
+          <div className="provider-component-wrapper">
+            <div className="provider-information-wrapper">
+              <div className="provider-information-name-div">
+                <h3 className="provider-information-name">{provider.name}</h3>
               </div>
-            ) : (
-              ''
-            )}
+              <div className="card-fields">
+                <CardField infoOne="E-mail:" infoTwo={provider.email} />
+                <CardField infoOne="State: " infoTwo={provider.state} />
+              </div>
+              <div className="provider-information-description">{provider.description}</div>
+            </div>
+            <div className="provider-info-buttons">
+              <div className="p-btn">
+                <Link to="/providers" className="provider-info-btns">
+                  Back to our partners
+                </Link>
+              </div>
+              <div className="p-btn">
+                <Link to={`/make_appointment/${provider.id}`} className="provider-info-btns">
+                  Book an appointment with {provider.name}
+                </Link>
+              </div>
+
+              {userStatus.admin === true ? (
+                <div>
+                  <div className="p-btn">
+                    <Link to="" onClick={this.deleteProvider} className="provider-info-btns">
+                      Delete Partner
+                    </Link>
+                  </div>
+                </div>
+              ) : (
+                ''
+              )}
+            </div>
           </div>
-        </div>
+        </main>
       </div>
     );
   }

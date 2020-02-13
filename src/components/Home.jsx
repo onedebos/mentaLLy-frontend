@@ -1,10 +1,8 @@
-/* eslint-disable import/no-duplicates */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles/Home.css';
 import PropTypes from 'prop-types';
-import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import expand from './helpers/menuResponse';
 
@@ -23,26 +21,28 @@ class Home extends React.Component {
 
   render() {
     const { loggedInStatus } = this.props;
+    const menuIcon = (
+      <div className="menu" id="HomeMenu">
+        <FontAwesomeIcon className="MenuIcon" id="MenuIcon" icon={faBars} onClick={expand} />
+        <div className="items" id="items">
+          <div className="HomeMenuItem">
+            <Link to="/login" className="HomeMenuIn">
+              Sign in
+            </Link>
+          </div>
+          <div className="HomeMenuItem">
+            <Link to="/sign_up" className="HomeMenuUp">
+              Sign up
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
 
     return (
       <div className="home-body">
+        {loggedInStatus === 'NOT_LOGGED_IN' ? menuIcon : ''}
         <header>
-          <div className="menu" id="HomeMenu">
-            <FontAwesomeIcon className="MenuIcon" id="MenuIcon" icon={faBars} onClick={expand} />
-            <div className="items" id="items">
-              <div className="HomeMenuItem">
-                <Link to="/login" className="HomeMenuIn">
-                  Sign in
-                </Link>
-              </div>
-              <div className="HomeMenuItem">
-                <Link to="/sign_up" className="HomeMenuUp">
-                  Sign up
-                </Link>
-              </div>
-            </div>
-          </div>
-
           <h1 className="logo-title">MentaLLy</h1>
           <p className="Book">Book mental health services across Nigeria.</p>
           {loggedInStatus === 'NOT_LOGGED_IN' ? (
@@ -63,7 +63,7 @@ class Home extends React.Component {
             </div>
           ) : (
             <p className="signed-in">
-              You are signed in. &apos;
+              You are signed in. &apos
               <Link to="/providers">See our partners</Link>
             </p>
           )}

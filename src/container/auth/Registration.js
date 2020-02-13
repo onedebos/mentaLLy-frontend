@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import revealPass from '../helpers/revealPassword';
-import Field from './Field';
-import Submit from './Submit';
-import API_URL from '../helpers/apiUrl';
-import '../styles/Registration.css';
+import revealPass from '../../components/helpers/revealPassword';
+import Field from '../../components/auth/Field';
+import Submit from '../../components/auth/Submit';
+import API_URL from '../../components/helpers/apiUrl';
+import '../../components/styles/Registration.css';
 
 export class Registration extends Component {
   constructor(props) {

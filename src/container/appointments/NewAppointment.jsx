@@ -3,9 +3,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import TimePicker from 'react-time-picker';
-import statesInNigeria from './statesInNigeria';
-import '../styles/NewAppointment.css';
-import API_URL from '../helpers/apiUrl';
+import statesInNigeria from '../../components/appointments/statesInNigeria';
+import '../../components/styles/NewAppointment.css';
+import API_URL from '../../components/helpers/apiUrl';
 
 class NewAppointment extends React.Component {
   constructor(props) {
@@ -96,43 +96,45 @@ class NewAppointment extends React.Component {
 
     return (
       <div className="make-appointment-bg">
-        <div className="make-appointment-container">
-          <div className="make-appointment-wrapper">
-            <h1 className="make-appointment-title">Make an appointment with {provider.name}</h1>
-            <form onSubmit={this.onSubmit}>
-              <div className="form-group">
-                <div className="res-state">
-                  <label htmlFor="city">Your resident state:</label>
+        <main>
+          <div className="make-appointment-container">
+            <div className="make-appointment-wrapper">
+              <h1 className="make-appointment-title">Make an appointment with {provider.name}</h1>
+              <form onSubmit={this.onSubmit}>
+                <div className="form-group">
+                  <div className="res-state">
+                    <label htmlFor="city">Your resident state:</label>
+                  </div>
+                  <select name="city" id="city" required onChange={this.onChange}>
+                    {displayStatesInNigeria()}
+                  </select>
                 </div>
-                <select name="city" id="city" required onChange={this.onChange}>
-                  {displayStatesInNigeria()}
-                </select>
-              </div>
-              <div className="form-group">
-                <div className="res-state">
-                  <label htmlFor="Date">Date:</label>
+                <div className="form-group">
+                  <div className="res-state">
+                    <label htmlFor="Date">Date:</label>
+                  </div>
+                  <input type="date" name="date" id="date" required onChange={this.onChange} />
                 </div>
-                <input type="date" name="date" id="date" required onChange={this.onChange} />
-              </div>
-              <div className="form-group">
-                <div>
-                  <TimePicker className="TimePicker" onChange={onChangeTime} value={time} />
+                <div className="form-group">
+                  <div>
+                    <TimePicker className="TimePicker" onChange={onChangeTime} value={time} />
+                  </div>
+                  <small id="logoHelp">24hr clock</small>
                 </div>
-                <small id="logoHelp">24hr clock</small>
-              </div>
-              <div className="btn-div">
-                <button type="submit" className="make-appointment-btn">
-                  Create appointment
-                </button>
-              </div>
-              <div className="btn-link-providers">
-                <Link to="/providers" className="btn-link-providers">
-                  Back to Providers
-                </Link>
-              </div>
-            </form>
+                <div className="btn-div">
+                  <button type="submit" className="make-appointment-btn">
+                    Create appointment
+                  </button>
+                </div>
+                <div className="btn-link-providers">
+                  <Link to="/providers" className="btn-link-providers">
+                    Back to Providers
+                  </Link>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
+        </main>
       </div>
     );
   }

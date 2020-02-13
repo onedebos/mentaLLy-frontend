@@ -1,12 +1,11 @@
 /* eslint-disable no-nested-ternary */
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import API_URL from '../helpers/apiUrl';
-import DisplayAllTitles from '../auth/DisplayAllTtitles';
-import AppointmentCard from './AppointmentCard';
-
-import '../styles/UserAppointments.css';
+import AppointmentCard from '../../components/appointments/AppointmentCard';
+import DisplayAllTitles from '../../components/auth/DisplayAllTtitles';
+import API_URL from '../../components/helpers/apiUrl';
+import '../../components/styles/UserAppointments.css';
 
 class UserAppointment extends React.Component {
   constructor(props) {

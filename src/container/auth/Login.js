@@ -1,12 +1,11 @@
-/* eslint-disable react/forbid-prop-types */
 import React, { Component } from 'react';
 import axios from 'axios';
-import '../styles/Login.css';
+import '../../components/styles/Login.css';
 import PropTypes from 'prop-types';
-import API_URL from '../helpers/apiUrl';
-import revealPass from '../helpers/revealPassword';
-import Field from './Field';
-import Submit from './Submit';
+import API_URL from '../../components/helpers/apiUrl';
+import revealPass from '../../components/helpers/revealPassword';
+import Field from '../../components/auth/Field';
+import Submit from '../../components/auth/Submit';
 
 export class Login extends Component {
   constructor(props) {
