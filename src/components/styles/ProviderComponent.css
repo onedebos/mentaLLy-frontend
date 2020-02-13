@@ -21,6 +21,7 @@
   width: 400px;
   position: absolute;
   top: 0;
+  margin: 1em;
   opacity: 0.9;
   right: 0;
   margin: 2em;
@@ -64,6 +65,7 @@ link:hover {
 
   .provider-component-wrapper {
     width: 280px;
+    margin-top: 10em;
   }
 
   .screaming {
