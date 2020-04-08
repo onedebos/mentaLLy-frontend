@@ -85,6 +85,12 @@ npm start
 - npm
 - node
 
+### Automated Tests
+- Currently, there are no automated tests avaailable for this project. This will be implemented at a later date.
+
+### Planned Features
+- Available dates and times slots should be preset and user can only book from available slots.
+
 ## Authors
 
 👤 **Adebola**
