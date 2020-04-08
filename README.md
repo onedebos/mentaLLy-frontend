@@ -3,7 +3,6 @@
 > This is a tablet(intended to be viewed on tablets) web app that allows people schedule
 > appointments with mental health service providers in Nigeria.
 
-![screenshot](./app_screenshot.png)
 ![demo](./video-demo.gif)
 
 The app includes a Rails API that renders JSON to be consumed
